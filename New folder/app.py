@@ -1,10 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for,jsonify
-import requests
-import json
-from flask_cors import CORS
+from flask import Flask, request
 from ultrabot import ultraChatBot
 app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
 
 
 # Load environment variables from .env file
