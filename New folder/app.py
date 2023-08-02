@@ -1,9 +1,10 @@
 from flask import Flask, request
 from ultrabot import ultraChatBot
+
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['POST'])
 def home():
     if request.method == 'POST':
         bot = ultraChatBot(request.json)
