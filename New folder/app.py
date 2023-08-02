@@ -12,8 +12,6 @@ CORS(app)  # This will enable CORS for all routes
 
 
 @app.route('/')
-def index():
-    return render_template('index.html')
 def home():
     if request.method == 'POST':
         bot = ultraChatBot(request.json)
