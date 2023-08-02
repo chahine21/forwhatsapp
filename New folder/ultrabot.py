@@ -22,38 +22,6 @@ class ultraChatBot():
         answer = self.send_requests('messages/chat', data)
         return answer
 
-    # def send_image(self, chatID):
-    #     data = {"to" : chatID,
-    #             "image" : "https://file-example.s3-accelerate.amazonaws.com/images/test.jpeg"}  
-    #     answer = self.send_requests('messages/image', data)
-    #     return answer
-
-    # def send_video(self, chatID):
-    #     data = {"to" : chatID,
-    #             "video" : "https://file-example.s3-accelerate.amazonaws.com/video/test.mp4"}  
-    #     answer = self.send_requests('messages/video', data)
-    #     return answer
-
-    # def send_audio(self, chatID):
-    #     data = {"to" : chatID,
-    #             "audio" : "https://file-example.s3-accelerate.amazonaws.com/audio/2.mp3"}  
-    #     answer = self.send_requests('messages/audio', data)
-    #     return answer
-
-
-    # def send_voice(self, chatID):
-    #     data = {"to" : chatID,
-    #             "audio" : "https://file-example.s3-accelerate.amazonaws.com/voice/oog_example.ogg"}  
-    #     answer = self.send_requests('messages/voice', data)
-    #     return answer
-
-    # def send_contact(self, chatID):
-    #     data = {"to" : chatID,
-    #             "contact" : "14000000001@c.us"}  
-    #     answer = self.send_requests('messages/contact', data)
-    #     return answer
-
-
     def time(self, chatID):
         t = datetime.datetime.now()
         time = t.strftime('%Y-%m-%d %H:%M:%S')
@@ -83,16 +51,6 @@ Please type one of these commands:
                     return self.welcome(chatID)
                 elif text[0].lower() == 'time':
                     return self.time(chatID)
-                # elif text[0].lower() == 'image':
-                #     return self.send_image(chatID)
-                # elif text[0].lower() == 'video':
-                #     return self.send_video(chatID)
-                # elif text[0].lower() == 'audio':
-                #     return self.send_audio(chatID)
-                # elif text[0].lower() == 'voice':
-                #     return self.send_voice(chatID)
-                # elif text[0].lower() == 'contact':
-                #     return self.send_contact(chatID)
                 else:
                     return self.welcome(chatID, True)
             else: return 'NoCommand'
